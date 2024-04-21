@@ -75,14 +75,14 @@ const Like = ({ blog }) => {
       {show && (
         <div className="bg-black/40 fixed inset-0 z-30 flex items-center justify-center">
           {blog.likes.length > 0 && (
-            <div className="bg-form rounded-lg">
+            <div
+              className="bg-form rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            >
               <h3 className="text-center font-bold p-3 relative after:content=[''] after:w-[50px] after:h-[2px] after:bg-primary after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2">
                 Likes
               </h3>
-              <ul
-                className="w-[400px] max-h-[400px] overflow-auto z-40"
-                onClick={(e) => e.stopPropagation()}
-              >
+              <ul className="w-[400px] max-h-[400px] overflow-auto z-40">
                 {blog.likes.map((like, index) => {
                   return (
                     <li
