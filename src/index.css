@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+:root {
+  --primary-color: #ff6363;
+  --secBackground: #ececec;
+  --form-color: white;
+  --scroll-thumb-color: #c7c8cc;
+}
+.dark {
+  --secBackground: #101214;
+  --form-color: #161a1d;
+  --main-text: #dee4ea;
+  --scroll-thumb-color: #4d4d4d;
+}
+
+/* Scroll Bar Styles */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--form-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+  border-radius: 10px;
+}
