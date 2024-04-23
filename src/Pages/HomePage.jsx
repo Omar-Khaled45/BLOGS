@@ -2,13 +2,16 @@ import Skeleton from "../components/Skeleton";
 import Blog from "../components/Blog";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useListContext } from "../hooks/useListContext";
+import { Navigate } from "react-router-dom";
 
 const HomePage = () => {
-  // User Context
   const { user } = useAuthContext();
 
-  // Blog List Context
   const { loading, blogsList } = useListContext();
+
+  if (user && !user.emailVerified) {
+    return <Navigate to="/email-verification" />;
+  }
 
   return (
     <div

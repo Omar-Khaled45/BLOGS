@@ -10,10 +10,8 @@ import { auth } from "../firebase-config";
 export const AuthContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
-  // Current User State
   const [user, setUser] = useState(null);
 
-  // Loading State
   const [loading, setLoading] = useState(true);
 
   // Sign Up Function

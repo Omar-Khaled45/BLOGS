@@ -5,10 +5,8 @@ import useClickOutside from "../hooks/useClickOutside";
 import { useListContext } from "../hooks/useListContext";
 
 const Navbar = () => {
-  // Navigate Variable
   const navigate = useNavigate();
 
-  // Auth Context
   const { user, userSignOut } = useAuthContext();
 
   // Show State For Nav Menu

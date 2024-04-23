@@ -1,73 +1,36 @@
-import "./App.css";
 import {
-  BrowserRouter as Router,
-  Routes,
   Route,
-  Navigate,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
 } from "react-router-dom";
-import Navbar from "./components/Navbar";
+
+// Pages
 import LogIn from "./Pages/LogIn";
 import SignUp from "./Pages/SignUp";
 import HomePage from "./Pages/HomePage";
 import AddBlogPage from "./Pages/AddPostPage";
-import Settings from "./components/Settings";
-import { useAuthContext } from "./hooks/useAuthContext";
-import EmailVerification from "./Pages/EmailVerification";
 import ResetPassword from "./Pages/ResetPassword";
+import EmailVerification from "./Pages/EmailVerification";
+
+// Layouts
+import RootLayout from "./layouts/RootLayout";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<HomePage />} />
+      <Route path="reset-password" element={<ResetPassword />} />
+      <Route path="login" element={<LogIn />} />
+      <Route path="signup" element={<SignUp />} />
+      <Route path="add" element={<AddBlogPage />} />
+      <Route path="email-verification" element={<EmailVerification />} />
+    </Route>
+  )
+);
 
 function App() {
-  const { user } = useAuthContext();
-
-  return (
-    <Router>
-      <Navbar />
-      <Settings />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            user && !user.emailVerified ? (
-              <Navigate to="/email-verification" />
-            ) : (
-              <HomePage />
-            )
-          }
-        />
-        <Route
-          path="/login"
-          element={!user ? <LogIn /> : <Navigate to="/" />}
-        />
-        <Route
-          path="/signup"
-          element={!user ? <SignUp /> : <Navigate to="/" />}
-        />
-        <Route
-          path="/add"
-          element={
-            user && user.emailVerified ? (
-              <AddBlogPage />
-            ) : (
-              <Navigate to="/login" />
-            )
-          }
-        />
-        <Route
-          path="/email-verification"
-          element={
-            user && !user.emailVerified ? (
-              <EmailVerification />
-            ) : (
-              <Navigate to="/" />
-            )
-          }
-        />
-        <Route
-          path="/reset-password"
-          element={!user ? <ResetPassword /> : <Navigate to="/" />}
-        />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

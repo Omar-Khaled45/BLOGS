@@ -1,21 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useAuthErrorHandling } from "../hooks/useAuthErrorHandling";
 import { useListContext } from "../hooks/useListContext";
 
 const LogIn = () => {
-  // Navigate Variable
   const navigate = useNavigate();
 
-  // Email State
   const [email, setEmail] = useState("");
 
-  // Password State
   const [password, setPassword] = useState("");
 
-  const { userSignIn } = useAuthContext();
+  const { user, userSignIn } = useAuthContext();
 
   const { error, setError, handleAuthError } = useAuthErrorHandling();
 
@@ -37,6 +34,10 @@ const LogIn = () => {
         handleAuthError(error);
       });
   };
+
+  if (user) {
+    return <Navigate to="/" replace />;
+  }
 
   return (
     <div className="h-[calc(100vh-72px)] bg-secBackground flex items-center transition-all duration-300 dark:text-mainText">

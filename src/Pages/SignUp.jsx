@@ -1,25 +1,20 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { sendEmailVerification, updateProfile } from "firebase/auth";
 import { auth } from "../firebase-config";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useAuthErrorHandling } from "../hooks/useAuthErrorHandling";
 
 const SignUp = () => {
-  // Email State
   const [email, setEmail] = useState("");
 
-  // Password State
   const [password, setPassword] = useState("");
 
-  // First Name State
   const [firstName, setFirstName] = useState("");
 
-  // Surname State
   const [surname, setSurname] = useState("");
 
-  // Auth Context
-  const { userSignUp } = useAuthContext();
+  const { user, userSignUp } = useAuthContext();
 
   const { error, setError, handleAuthError } = useAuthErrorHandling();
 
@@ -43,6 +38,10 @@ const SignUp = () => {
         handleAuthError(error);
       });
   };
+
+  if (user) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="h-[calc(100vh-72px)] bg-secBackground flex items-center transition-all duration-200 dark:text-mainText">

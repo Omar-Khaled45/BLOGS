@@ -1,24 +1,19 @@
 import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useListContext } from "../hooks/useListContext";
 
 const AddBlogPage = () => {
-  // Navigate Variable
   const navigate = useNavigate();
 
-  // Auth Context
   const { user } = useAuthContext();
 
-  // Blog List Context
   const { setLoading } = useListContext();
 
-  // Title State
   const [title, setTitle] = useState("");
 
-  // Blog State
   const [blog, setBlog] = useState("");
 
   // Add Blog to FireStore
@@ -53,6 +48,10 @@ const AddBlogPage = () => {
 
     navigate("/");
   };
+
+  if (user === null) {
+    return <Navigate to="/login" />;
+  }
 
   return (
     <div className="h-[calc(100vh-72px)] bg-secBackground flex items-center transition-all duration-300 dark:text-mainText">

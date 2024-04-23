@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import MailSent from "../assets/undraw_mail_sent_re_0ofv.svg";
 
@@ -11,6 +11,14 @@ const EmailVerification = () => {
     userSignOut().then(() => navigate("/login"));
   };
 
+  if (user === null) {
+    return <Navigate to="/login" />;
+  }
+
+  if (user?.emailVerified) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <div className="h-[calc(100vh-72px)] bg-secBackground transition-all duration-200 dark:text-mainText">
       <div className="container flex justify-center">
@@ -21,7 +29,7 @@ const EmailVerification = () => {
           <h1 className="text-2xl font-bold mb-2">Verify Your Email</h1>
           <p>
             Almost there! We have sent an email to{" "}
-            <span className="font-bold">{user.email}</span>.
+            <span className="font-bold">{user?.email}</span>.
           </p>
           <p>
             Please follow the instructions to verify your email <br />

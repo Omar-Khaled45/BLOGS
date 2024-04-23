@@ -2,10 +2,13 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../firebase-config";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const ResetPassword = () => {
   const [email, setEmail] = useState("");
+
+  const { user } = useAuthContext();
 
   const navigate = useNavigate();
 
@@ -30,6 +33,10 @@ const ResetPassword = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  if (user) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="h-[calc(100vh-72px)] bg-secBackground flex items-center transition-all duration-300 dark:text-mainText">

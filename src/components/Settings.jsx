@@ -3,7 +3,6 @@ import DarkModeToggle from "./DarkModeToggle";
 import ColorPalette from "./ColorPalette";
 
 const Settings = () => {
-  // Setting Menu Show State
   const [show, setShow] = useState(false);
 
   return (

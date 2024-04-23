@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 const DarkModeToggle = () => {
   const selectedTheme = localStorage.getItem("theme");
 
-  // Theme State
   const [theme, setTheme] = useState(selectedTheme || "light");
 
   // State to manage the current mode (true for dark mode, false for light mode)

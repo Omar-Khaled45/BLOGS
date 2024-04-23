@@ -6,10 +6,8 @@ import { useListContext } from "../hooks/useListContext";
 const EditForm = ({ blog }) => {
   const { setBlogsList, blogsList } = useListContext();
 
-  // Edited Title
   const [editTitle, setEditTitle] = useState(blog.title);
 
-  // Edited Blog
   const [editBlog, setEditBlog] = useState(blog.blog);
 
   const handleClick = (id) => {

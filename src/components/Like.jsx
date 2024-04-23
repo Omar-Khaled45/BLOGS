@@ -7,7 +7,6 @@ import useClickOutside from "../hooks/useClickOutside";
 const Like = ({ blog }) => {
   const { user } = useAuthContext();
 
-  // Likes List Show State
   const [show, setShow] = useState(false);
 
   const likeRef = useRef(null);
