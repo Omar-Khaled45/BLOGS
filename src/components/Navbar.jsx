@@ -30,7 +30,7 @@ const Navbar = () => {
       <nav className="container h-[72px] flex items-center justify-between">
         <Link
           to="/"
-          className="text-3xl text-primary font-bold transition-all duration-300"
+          className="text-2xl md:text-3xl text-primary font-bold transition-all duration-300"
           onClick={reload}
         >
           BLOGS
@@ -40,7 +40,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/signup"
-                className="px-5 py-2 border-[3px] border-primary text-primary rounded-full font-semibold transition-all duration-300 md:hover:bg-primary md:hover:text-white"
+                className="px-3 py-1.5 md:px-5 md:py-2 text-[14px] md:text-base border-[3px] border-primary text-primary rounded-full font-semibold transition-all duration-300 md:hover:bg-primary md:hover:text-white"
               >
                 Sign Up
               </Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/login"
-                className="px-5 py-2 border-[3px] ml-3 border-primary text-white rounded-full bg-primary font-semibold"
+                className="px-3 py-1.5 md:px-5 md:py-2 ml-3 text-[14px] md:text-base border-[3px] border-primary text-white rounded-full bg-primary font-semibold"
               >
                 Log In
               </Link>

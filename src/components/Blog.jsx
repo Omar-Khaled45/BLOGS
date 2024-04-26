@@ -60,7 +60,7 @@ const Blog = ({ blog }) => {
   return (
     <>
       <div className="p-5 bg-form mb-7 rounded-xl shadow-md dark:shadow-dark w-[400px] md:w-[600px] relative">
-        <h1 className="text-4xl font-bold">
+        <h1 className="text-2xl md:text-4xl font-bold">
           {blog.title.charAt(0).toUpperCase() + blog.title.slice(1)}{" "}
         </h1>
         {user.uid === blog.author.id && (
@@ -131,10 +131,12 @@ const Blog = ({ blog }) => {
         <span className="text-gray-500 text-sm">
           {blog.time.day} {blog.time.month} {blog.time.year}
         </span>
-        <p className="text-lg my-3 h-auto max-h-[400px] overflow-auto">
+        <p className="md:text-lg my-3 h-auto max-h-[400px] overflow-auto">
           {blog.blog}
         </p>
-        <p className="font-semibold text-gray-500">By: {blog.author.name}</p>
+        <p className="text-sm font-semibold text-gray-300 dark:text-gray-700">
+          By: {blog.author.name}
+        </p>
         <Like blog={blog} />
       </div>
       <EditForm blog={blog} />

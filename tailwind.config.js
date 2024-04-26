@@ -21,8 +21,8 @@ export default {
         dark: "inset 0 0 3px 1px hsla(0, 0%, 100%, 0.075)",
       },
       backgroundImage: {
-        homeLight: "url('./src/assets/wave-haikei.svg')",
-        homeDark: "url('./src/assets/wave-haikei-dark.svg')",
+        homeLight: "url('/src/assets/wave-haikei.svg')",
+        homeDark: "url('/src/assets/wave-haikei-dark.svg')",
       },
       animation: {
         "spin-slow": "spin 3s linear infinite",
@@ -35,9 +35,9 @@ export default {
       addComponents({
         ".container": {
           maxWidth: "750px",
-          padding: "0 15px",
+          padding: "0 40px",
           "@screen md": {
-            maxWidth: "750px",
+            padding: "0 15px",
           },
           "@screen lg": {
             maxWidth: "970px",

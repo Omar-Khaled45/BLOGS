@@ -24,9 +24,11 @@ const EmailVerification = () => {
       <div className="container flex justify-center">
         <div className="mt-[60px] text-center leading-8 tracking-wide">
           <div className="flex justify-center w-full mb-5">
-            <img src={MailSent} alt="Mail Sent" className="w-56" />
+            <img src={MailSent} alt="Mail Sent" className="w-40 md:w-56" />
           </div>
-          <h1 className="text-2xl font-bold mb-2">Verify Your Email</h1>
+          <h1 className="text-xl md:text-2xl font-bold mb-2">
+            Verify Your Email
+          </h1>
           <p>
             Almost there! We have sent an email to{" "}
             <span className="font-bold">{user?.email}</span>.
