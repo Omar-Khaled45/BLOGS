@@ -43,7 +43,7 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.3 }}
-              className="mt-5 text-lg md:text-2xl font-semibold text-gray-500 leading-relaxed md:leading-relaxed"
+              className="mt-5 text-lg md:text-2xl md:w-3/5 font-semibold text-gray-500 leading-relaxed md:leading-relaxed"
             >
               Explore a world of captivating content, share your thoughts, and
               embark on a journey of discovery.

@@ -81,7 +81,7 @@ const Like = ({ blog }) => {
               <h3 className="text-center font-bold p-3 relative after:content=[''] after:w-[50px] after:h-[2px] after:bg-primary after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2">
                 Likes
               </h3>
-              <ul className="w-[400px] max-h-[400px] overflow-auto z-40">
+              <ul className="w-[350px] md:w-[400px] max-h-[400px] overflow-auto z-40">
                 {blog.likes.map((like, index) => {
                   return (
                     <li

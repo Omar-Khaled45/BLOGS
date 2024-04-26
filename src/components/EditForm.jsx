@@ -39,7 +39,7 @@ const EditForm = ({ blog }) => {
           onClick={() => handleClick(blog.id)}
         >
           <div
-            className="bg-form w-[400px] rounded-lg p-5 relative"
+            className="bg-form w-[350px] md:w-[400px] rounded-lg p-5 relative"
             onClick={(e) => e.stopPropagation()}
           >
             <h3 className="text-center font-bold pb-3 relative after:content=[''] after:w-[50px] after:h-[2px] after:bg-primary after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2">

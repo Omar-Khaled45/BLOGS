@@ -33,7 +33,6 @@ const Blog = ({ blog }) => {
       confirmButtonColor: "var(--primary-color)",
       cancelButtonColor: "#b6bbc4",
       confirmButtonText: "Delete",
-      animation: false,
     }).then((result) => {
       if (result.isConfirmed) {
         deleteDoc(doc(db, "blogs", id));
@@ -59,7 +58,7 @@ const Blog = ({ blog }) => {
 
   return (
     <>
-      <div className="p-5 bg-form mb-7 rounded-xl shadow-md dark:shadow-dark w-[400px] md:w-[600px] relative">
+      <div className="p-5 bg-form mb-7 rounded-xl shadow-md dark:shadow-dark w-[350px] md:w-[600px] relative">
         <h1 className="text-2xl md:text-4xl font-bold">
           {blog.title.charAt(0).toUpperCase() + blog.title.slice(1)}{" "}
         </h1>

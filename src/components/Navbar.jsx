@@ -57,7 +57,7 @@ const Navbar = () => {
         ) : (
           user.emailVerified && (
             <div className="flex items-center">
-              <div className="me-3 dark:text-white">
+              <div className="me-3 text-sm md:text-base dark:text-white">
                 Welcome, {user.displayName && user?.displayName?.split(" ")[0]}
               </div>
               <div ref={navMenuRef} className="relative">
