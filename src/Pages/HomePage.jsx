@@ -34,7 +34,7 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="w-4/6 md:w-3/5 text-2xl md:text-4xl font-bold leading-relaxed md:leading-relaxed"
+              className="w-5/6 md:w-3/5 text-2xl md:text-4xl font-bold leading-relaxed md:leading-relaxed"
             >
               Welcome to <span className="text-primary">BLOGS</span> – Your
               Gateway to Insightful and Engaging Content!

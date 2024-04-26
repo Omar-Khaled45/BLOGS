@@ -40,9 +40,9 @@ const LogIn = () => {
   }
 
   return (
-    <div className="h-[calc(100vh-72px)] bg-secBackground flex items-center transition-all duration-300 dark:text-mainText">
+    <div className="h-[calc(100vh-72px)] bg-secBackground flex items-start md:items-center transition-all duration-300 dark:text-mainText">
       <div className="container flex justify-center">
-        <div className="w-[500px] bg-form rounded-lg shadow-lg dark:shadow-dark px-7 py-5">
+        <div className="w-[500px] px-7 py-5 mt-[100px] md:mt-0 bg-form rounded-lg shadow-lg dark:shadow-dark">
           <h1 className="text-center text-2xl md:text-4xl font-bold mb-5 md:mb-10 relative after:content=[''] after:w-[50px] after:h-[5px] after:bg-primary after:absolute after:bottom-[-15px] md:after:bottom-[-20px] after:left-1/2 after:-translate-x-1/2">
             Log In
           </h1>
