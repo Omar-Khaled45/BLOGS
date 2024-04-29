@@ -7,7 +7,7 @@ const ColorPalette = () => {
   );
 
   // Colors Array
-  const colors = ["#ff6363", "#4caf50", "#7F27FF", "#03a9f4"];
+  const colors = ["#ff6363", "#4caf50", "#7f27ff", "#03a9f4"];
 
   // Update Primary Color in Root Element
   const updatePrimaryColor = (color) => {
