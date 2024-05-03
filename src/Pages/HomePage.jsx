@@ -3,8 +3,16 @@ import { useListContext } from "../hooks/useListContext";
 import { Navigate } from "react-router-dom";
 import { lazy } from "react";
 
-const UnAuthHome = lazy(() => import("../components/UnAuthHome"));
+const UnAuthHome = lazy(() =>
+  wait().then(() => import("../components/UnAuthHome"))
+);
 const AuthHome = lazy(() => import("../components/AuthHome"));
+
+const wait = () => {
+  return new Promise((res) => {
+    setTimeout(res, 1000);
+  });
+};
 
 const HomePage = () => {
   const { user } = useAuthContext();
