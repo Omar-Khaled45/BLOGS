@@ -12,7 +12,7 @@ import { lazy } from "react";
 // Pages
 const LogIn = lazy(() => import("./Pages/LogIn"));
 const SignUp = lazy(() => import("./Pages/SignUp"));
-const HomePage = lazy(() => import("./Pages/HomePage"));
+const HomePage = lazy(() => wait().then(() => import("./Pages/HomePage")));
 const AddPostPage = lazy(() => import("./Pages/AddPostPage"));
 const ResetPassword = lazy(() => import("./Pages/ResetPassword"));
 const EmailVerification = lazy(() => import("./Pages/EmailVerification"));
@@ -29,6 +29,12 @@ const router = createBrowserRouter(
     </Route>
   )
 );
+
+const wait = () => {
+  return new Promise((res) => {
+    setTimeout(res, 1000);
+  });
+};
 
 function App() {
   return <RouterProvider router={router} />;
