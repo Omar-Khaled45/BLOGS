@@ -1,12 +1,13 @@
-import { useRef, useState } from "react";
+import { lazy, useRef, useState } from "react";
 import Like from "./Like";
-import EditForm from "./EditForm";
 import { deleteDoc, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
 import { db } from "../firebase-config";
 import { useAuthContext } from "../hooks/useAuthContext";
 import useClickOutside from "../hooks/useClickOutside";
 import { useListContext } from "../hooks/useListContext";
+
+const EditForm = lazy(() => import("./EditForm"));
 
 const Blog = ({ blog }) => {
   const { user } = useAuthContext();
@@ -138,7 +139,7 @@ const Blog = ({ blog }) => {
         </p>
         <Like blog={blog} />
       </div>
-      <EditForm blog={blog} />
+      {blog.editing && <EditForm blog={blog} handleClick={handleEdit} />}
     </>
   );
 };

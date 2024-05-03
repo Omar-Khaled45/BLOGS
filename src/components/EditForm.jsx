@@ -1,25 +1,11 @@
 import { useState } from "react";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase-config";
-import { useListContext } from "../hooks/useListContext";
 
-const EditForm = ({ blog }) => {
-  const { setBlogsList, blogsList } = useListContext();
-
+const EditForm = ({ blog, handleClick }) => {
   const [editTitle, setEditTitle] = useState(blog.title);
 
   const [editBlog, setEditBlog] = useState(blog.blog);
-
-  const handleClick = (id) => {
-    setBlogsList(
-      blogsList.map((blog) => {
-        return {
-          ...blog,
-          editing: blog.id === id && !blog.editing,
-        };
-      })
-    );
-  };
 
   // Function to Submit Edited Title & Blog
   const handleSubmit = (e) => {
@@ -33,7 +19,7 @@ const EditForm = ({ blog }) => {
 
   return (
     <>
-      {blog.editing && (
+      {
         <div
           className="bg-black/40 fixed inset-0 z-30 flex items-center justify-center"
           onClick={() => handleClick(blog.id)}
@@ -81,7 +67,7 @@ const EditForm = ({ blog }) => {
             </form>
           </div>
         </div>
-      )}
+      }
     </>
   );
 };

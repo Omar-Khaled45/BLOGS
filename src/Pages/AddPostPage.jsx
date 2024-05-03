@@ -5,7 +5,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useListContext } from "../hooks/useListContext";
 
-const AddBlogPage = () => {
+const AddPostPage = () => {
   const navigate = useNavigate();
 
   const { user } = useAuthContext();
@@ -103,4 +103,4 @@ const AddBlogPage = () => {
   );
 };
 
-export default AddBlogPage;
+export default AddPostPage;
