@@ -53,6 +53,10 @@ const AddPostPage = () => {
     return <Navigate to="/login" />;
   }
 
+  if (user && !user?.emailVerified) {
+    return <Navigate to="/email-verification" />;
+  }
+
   return (
     <div className="h-[calc(100vh-72px)] bg-secBackground flex items-center transition-all duration-300 dark:text-mainText">
       <div className="container flex justify-center">
