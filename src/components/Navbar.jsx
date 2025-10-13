@@ -1,13 +1,15 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../hooks/useAuthContext";
 import useClickOutside from "../hooks/useClickOutside";
-import { useListContext } from "../hooks/useListContext";
+import { useAuthContext } from "../context/AuthContext";
+import { useListContext } from "../context/ListContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
 
   const { user, userSignOut } = useAuthContext();
+
+  const { reload } = useListContext();
 
   // Show State For Nav Menu
   const [showMenu, setShowMenu] = useState(false);
@@ -22,8 +24,6 @@ const Navbar = () => {
   const navMenuRef = useRef(null);
 
   useClickOutside(navMenuRef, () => setShowMenu(false));
-
-  const { reload } = useListContext();
 
   return (
     <header className="bg-form transition-all duration-300">

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { sendEmailVerification, updateProfile } from "firebase/auth";
 import { auth } from "../firebase-config";
-import { useAuthContext } from "../hooks/useAuthContext";
 import { useAuthErrorHandling } from "../hooks/useAuthErrorHandling";
+import { useAuthContext } from "../context/AuthContext";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");

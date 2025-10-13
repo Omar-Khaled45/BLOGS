@@ -1,6 +1,6 @@
 import { Navigate, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../hooks/useAuthContext";
 import MailSent from "../assets/undraw_mail_sent_re_0ofv.svg";
+import { useAuthContext } from "../context/AuthContext";
 
 const EmailVerification = () => {
   const { user, userSignOut } = useAuthContext();

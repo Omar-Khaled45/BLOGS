@@ -1,7 +1,7 @@
-import { useAuthContext } from "../hooks/useAuthContext";
-import { useListContext } from "../hooks/useListContext";
 import { Navigate } from "react-router-dom";
 import { lazy } from "react";
+import { useAuthContext } from "../context/AuthContext";
+import { useListContext } from "../context/ListContext";
 
 const UnAuthHome = lazy(() =>
   wait().then(() => import("../components/UnAuthHome"))

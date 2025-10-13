@@ -4,7 +4,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase-config";
 
 export const AuthContext = createContext();
@@ -15,7 +15,7 @@ const AuthContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // Sign Up Function
-  const userSignUp = async (email, password) => {
+  const userSignUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -56,6 +56,17 @@ const AuthContextProvider = ({ children }) => {
       {!loading && children}
     </AuthContext.Provider>
   );
+};
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const useAuthContext = () => {
+  const context = useContext(AuthContext);
+
+  if (!context) {
+    throw Error("useAuthContext must be used inside an AuthContextProvider");
+  }
+
+  return context;
 };
 
 export default AuthContextProvider;

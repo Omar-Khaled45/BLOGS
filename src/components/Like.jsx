@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase-config";
-import { useAuthContext } from "../hooks/useAuthContext";
 import useClickOutside from "../hooks/useClickOutside";
+import { useAuthContext } from "../context/AuthContext";
 
 const Like = ({ blog }) => {
   const { user } = useAuthContext();

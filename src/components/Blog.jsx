@@ -3,9 +3,9 @@ import Like from "./Like";
 import { deleteDoc, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
 import { db } from "../firebase-config";
-import { useAuthContext } from "../hooks/useAuthContext";
 import useClickOutside from "../hooks/useClickOutside";
-import { useListContext } from "../hooks/useListContext";
+import { useAuthContext } from "../context/AuthContext";
+import { useListContext } from "../context/ListContext";
 
 const EditForm = lazy(() => import("./EditForm"));
 

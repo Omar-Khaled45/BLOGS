@@ -1,5 +1,5 @@
 import { collection, onSnapshot } from "firebase/firestore";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { db } from "../firebase-config";
 
 export const ListContext = createContext();
@@ -42,6 +42,17 @@ const ListContextProvider = ({ children }) => {
       {children}
     </ListContext.Provider>
   );
+};
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const useListContext = () => {
+  const context = useContext(ListContext);
+
+  if (!context) {
+    throw Error("useListContext must be used inside an ListContextProvider");
+  }
+
+  return context;
 };
 
 export default ListContextProvider;

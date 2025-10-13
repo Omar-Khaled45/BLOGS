@@ -2,8 +2,8 @@ import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
 import { Navigate, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../hooks/useAuthContext";
-import { useListContext } from "../hooks/useListContext";
+import { useAuthContext } from "../context/AuthContext";
+import { useListContext } from "../context/ListContext";
 
 const AddPostPage = () => {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { auth } from "../firebase-config";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { Navigate, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../hooks/useAuthContext";
+import { useAuthContext } from "../context/AuthContext";
 
 const ResetPassword = () => {
   const [email, setEmail] = useState("");

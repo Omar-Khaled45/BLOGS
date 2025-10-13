@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useAuthContext } from "../hooks/useAuthContext";
 import { useAuthErrorHandling } from "../hooks/useAuthErrorHandling";
-import { useListContext } from "../hooks/useListContext";
+import { useAuthContext } from "../context/AuthContext";
+import { useListContext } from "../context/ListContext";
 
 const LogIn = () => {
   const navigate = useNavigate();
@@ -14,9 +14,9 @@ const LogIn = () => {
 
   const { user, userSignIn } = useAuthContext();
 
-  const { error, setError, handleAuthError } = useAuthErrorHandling();
-
   const { reload } = useListContext();
+
+  const { error, setError, handleAuthError } = useAuthErrorHandling();
 
   // Handle Sign In Function
   const handleLogIn = (e) => {
