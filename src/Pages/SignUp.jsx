@@ -3,7 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { sendEmailVerification, updateProfile } from "firebase/auth";
 import { auth } from "../firebase-config";
 import { useAuthErrorHandling } from "../hooks/useAuthErrorHandling";
-import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../contexts/AuthProvider";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");

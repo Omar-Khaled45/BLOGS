@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuthErrorHandling } from "../hooks/useAuthErrorHandling";
-import { useAuthContext } from "../context/AuthContext";
-import { useListContext } from "../context/ListContext";
+import { useAuthContext } from "../contexts/AuthProvider";
+import { useListContext } from "../contexts/ListProvider";
 
 const LogIn = () => {
   const navigate = useNavigate();

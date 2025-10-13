@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useClickOutside from "../hooks/useClickOutside";
-import { useAuthContext } from "../context/AuthContext";
-import { useListContext } from "../context/ListContext";
+import { useAuthContext } from "../contexts/AuthProvider";
+import { useListContext } from "../contexts/ListProvider";
 
 const Navbar = () => {
   const navigate = useNavigate();

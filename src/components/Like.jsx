@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase-config";
 import useClickOutside from "../hooks/useClickOutside";
-import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../contexts/AuthProvider";
 
 const Like = ({ blog }) => {
   const { user } = useAuthContext();

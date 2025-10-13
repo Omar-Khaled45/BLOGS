@@ -1,11 +1,12 @@
 import { Navigate } from "react-router-dom";
 import { lazy } from "react";
-import { useAuthContext } from "../context/AuthContext";
-import { useListContext } from "../context/ListContext";
+import { useAuthContext } from "../contexts/AuthProvider";
+import { useListContext } from "../contexts/ListProvider";
 
 const UnAuthHome = lazy(() =>
   wait().then(() => import("../components/UnAuthHome"))
 );
+
 const AuthHome = lazy(() => import("../components/AuthHome"));
 
 const wait = () => {
