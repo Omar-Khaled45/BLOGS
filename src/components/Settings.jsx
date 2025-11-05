@@ -8,14 +8,14 @@ const Settings = () => {
   return (
     <>
       <div
-        className={`w-full h-full bg-black/40 fixed inset-0 z-10 ${
+        className={`w-full h-full  bg-black/40 fixed inset-0 z-10 ${
           show ? "visible opacity-100" : "invisible opacity-0"
         } transition-all duration-500`}
         onClick={() => setShow(false)}
       ></div>
       <div
-        className={`min-h-screen w-[350px] p-5 bg-white dark:bg-[#2d2f30] text-mainText fixed top-0 ${
-          show ? "right-0" : "right-[-350px]"
+        className={`min-h-screen w-[350px] p-5 bg-white dark:bg-[#2d2f30] text-mainText right-0 fixed top-0 ${
+          show ? "translate-x-0" : "translate-x-full"
         } z-20 transition-all duration-500`}
       >
         <div
