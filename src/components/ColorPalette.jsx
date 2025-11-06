@@ -3,7 +3,7 @@ import { useState } from "react";
 const ColorPalette = () => {
   // Selected Color State
   const [selectedColor, setSelectedColor] = useState(
-    localStorage.getItem("primaryColor") || "#ff6363"
+    localStorage.getItem("primaryColor") || "#ff6363",
   );
 
   // Colors Array
@@ -22,22 +22,22 @@ const ColorPalette = () => {
   if (localStorage.getItem("primaryColor")) {
     document.documentElement.style.setProperty(
       "--primary-color",
-      localStorage.getItem("primaryColor")
+      localStorage.getItem("primaryColor"),
     );
   }
 
   return (
     <>
-      <h4 className="font-bold mb-3 text-lg dark:text-gray-400">
+      <h4 className="mb-3 text-lg font-bold dark:text-gray-400">
         Color Palette
       </h4>
       <ul className="flex">
         {colors.map((color, index) => (
           <li
             key={index}
-            className={`w-[24px] h-[24px] rounded-full me-6 cursor-pointer ${
+            className={`me-6 h-[24px] w-[24px] cursor-pointer rounded-full ${
               selectedColor === color
-                ? "opacity-100 border-[3px] border-[#aaa]"
+                ? "border-[3px] border-[#aaa] opacity-100"
                 : "opacity-50"
             } transition-opacity duration-300`}
             style={{ backgroundColor: color }}

@@ -51,7 +51,7 @@ const Blog = ({ blog }) => {
           ...blog,
           editing: blog.id === id && !blog.editing,
         };
-      })
+      }),
     );
 
     setShow(false);
@@ -59,12 +59,12 @@ const Blog = ({ blog }) => {
 
   return (
     <>
-      <div className="p-5 bg-form mb-7 rounded-xl shadow-md dark:shadow-dark w-[350px] md:w-[600px] relative">
-        <h1 className="text-2xl md:text-4xl font-bold">
+      <div className="relative mb-7 w-[350px] rounded-xl bg-form p-5 shadow-md md:w-[600px] dark:shadow-dark">
+        <h1 className="text-2xl font-bold md:text-4xl">
           {blog.title.charAt(0).toUpperCase() + blog.title.slice(1)}{" "}
         </h1>
         {user.uid === blog.author.id && (
-          <div className="absolute top-2 right-4" ref={blogMenuRef}>
+          <div className="absolute right-4 top-2" ref={blogMenuRef}>
             <button onClick={() => setShow(!show)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ const Blog = ({ blog }) => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-8 h-8 rotate-90 rounded-full cursor-pointer md:hover:bg-gray-500/30"
+                className="h-8 w-8 rotate-90 cursor-pointer rounded-full md:hover:bg-gray-500/30"
               >
                 <path
                   strokeLinecap="round"
@@ -82,9 +82,9 @@ const Blog = ({ blog }) => {
               </svg>
             </button>
             {show && (
-              <ul className="absolute top-8 right-0 bg-zinc-100 shadow-xl dark:bg-zinc-700 dark:shadow-dark rounded-lg w-32">
+              <ul className="absolute right-0 top-8 w-32 rounded-lg bg-zinc-100 shadow-xl dark:bg-zinc-700 dark:shadow-dark">
                 <li
-                  className="p-2 rounded-lg m-1 cursor-pointer md:hover:bg-gray-500/20 dark:md:hover:bg-neutral-500/50 flex items-center"
+                  className="m-1 flex cursor-pointer items-center rounded-lg p-2 md:hover:bg-gray-500/20 dark:md:hover:bg-neutral-500/50"
                   onClick={() => handleEdit(blog.id)}
                 >
                   <svg
@@ -93,7 +93,7 @@ const Blog = ({ blog }) => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-4 h-4 me-2"
+                    className="me-2 h-4 w-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -104,7 +104,7 @@ const Blog = ({ blog }) => {
                   Edit
                 </li>
                 <li
-                  className="p-2 rounded-lg m-1 cursor-pointer md:hover:bg-neutral-500/20 dark:md:hover:bg-gray-500/50 flex items-center"
+                  className="m-1 flex cursor-pointer items-center rounded-lg p-2 md:hover:bg-neutral-500/20 dark:md:hover:bg-gray-500/50"
                   onClick={() => handleDelete(blog.id)}
                 >
                   <svg
@@ -113,7 +113,7 @@ const Blog = ({ blog }) => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-4 h-4 me-2"
+                    className="me-2 h-4 w-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -128,10 +128,10 @@ const Blog = ({ blog }) => {
           </div>
         )}
 
-        <span className="text-gray-500 text-sm">
+        <span className="text-sm text-gray-500">
           {blog.time.day} {blog.time.month} {blog.time.year}
         </span>
-        <p className="md:text-lg my-3 h-auto max-h-[400px] overflow-auto">
+        <p className="my-3 h-auto max-h-[400px] overflow-auto md:text-lg">
           {blog.blog}
         </p>
         <p className="text-sm font-semibold text-gray-300 dark:text-gray-700">

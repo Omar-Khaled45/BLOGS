@@ -8,18 +8,18 @@ const Settings = () => {
   return (
     <>
       <div
-        className={`w-full h-full  bg-black/40 fixed inset-0 z-10 ${
+        className={`fixed inset-0 z-10 h-full w-full bg-black/40 ${
           show ? "visible opacity-100" : "invisible opacity-0"
         } transition-all duration-500`}
         onClick={() => setShow(false)}
       ></div>
       <div
-        className={`min-h-screen w-[350px] p-5 bg-white dark:bg-[#2d2f30] text-mainText right-0 fixed top-0 ${
+        className={`fixed right-0 top-0 min-h-screen w-[350px] bg-white p-5 text-mainText dark:bg-[#2d2f30] ${
           show ? "translate-x-0" : "translate-x-full"
         } z-20 transition-all duration-500`}
       >
         <div
-          className={`w-[50px] h-[50px] bg-white dark:bg-[#2d2f30] absolute left-[-50px] top-[200px] rounded-l-full flex justify-center items-center cursor-pointer transition-all duration-500 ${
+          className={`absolute left-[-50px] top-[200px] flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-l-full bg-white transition-all duration-500 dark:bg-[#2d2f30] ${
             !show && "shadow-lg"
           }`}
           onClick={() => setShow(!show)}
@@ -30,7 +30,7 @@ const Settings = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={`w-7 h-7 ${
+            className={`h-7 w-7 ${
               show && "animate-spin-slow text-primary"
             } transition duration-200 md:hover:text-primary`}
           >
@@ -46,7 +46,7 @@ const Settings = () => {
             />
           </svg>
         </div>
-        <h3 className="font-bold text-2xl mb-5">Settings</h3>
+        <h3 className="mb-5 text-2xl font-bold">Settings</h3>
         <div className="colorOptions mb-10">
           <ColorPalette />
         </div>

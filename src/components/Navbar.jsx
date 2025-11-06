@@ -27,10 +27,10 @@ const Navbar = () => {
 
   return (
     <header className="bg-form transition-all duration-300">
-      <nav className="container h-[72px] flex items-center justify-between">
+      <nav className="container flex h-[72px] items-center justify-between">
         <Link
           to="/"
-          className="text-2xl md:text-3xl text-primary font-bold transition-all duration-300"
+          className="text-2xl font-bold text-primary transition-all duration-300 md:text-3xl"
           onClick={reload}
         >
           BLOGS
@@ -40,7 +40,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/signup"
-                className="px-3 py-1.5 md:px-5 md:py-2 text-[14px] md:text-base border-[3px] border-primary text-primary rounded-full font-semibold transition-all duration-300 md:hover:bg-primary md:hover:text-white"
+                className="rounded-full border-[3px] border-primary px-3 py-1.5 text-[14px] font-semibold text-primary transition-all duration-300 md:px-5 md:py-2 md:text-base md:hover:bg-primary md:hover:text-white"
               >
                 Sign Up
               </Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/login"
-                className="px-3 py-1.5 md:px-5 md:py-2 ml-3 text-[14px] md:text-base border-[3px] border-primary text-white rounded-full bg-primary font-semibold"
+                className="ml-3 rounded-full border-[3px] border-primary bg-primary px-3 py-1.5 text-[14px] font-semibold text-white md:px-5 md:py-2 md:text-base"
               >
                 Log In
               </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
                   onClick={() => {
                     setShowMenu(!showMenu);
                   }}
-                  className="w-7 h-7 flex items-center justify-center rounded-full md:hover:bg-gray-500/20 dark:md:hover:bg-gray-500/50 "
+                  className="flex h-7 w-7 items-center justify-center rounded-full md:hover:bg-gray-500/20 dark:md:hover:bg-gray-500/50"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ const Navbar = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className={`w-5 h-5 text-mainText cursor-pointer transition-all duration-300 ${
+                    className={`h-5 w-5 cursor-pointer text-mainText transition-all duration-300 ${
                       showMenu && "rotate-180"
                     }`}
                   >
@@ -86,11 +86,11 @@ const Navbar = () => {
                   </svg>
                 </button>
                 {showMenu && (
-                  <ul className="nav-menu w-[150px] bg-form rounded-lg shadow-lg dark:shadow-dark absolute top-12 right-0 z-10">
+                  <ul className="nav-menu absolute right-0 top-12 z-10 w-[150px] rounded-lg bg-form shadow-lg dark:shadow-dark">
                     <li>
                       <Link
                         to="/add"
-                        className="text-mainText p-2 m-1 flex items-center rounded-lg cursor-pointer md:hover:bg-gray-200 dark:md:hover:bg-gray-500/50"
+                        className="m-1 flex cursor-pointer items-center rounded-lg p-2 text-mainText md:hover:bg-gray-200 dark:md:hover:bg-gray-500/50"
                         onClick={() => setShowMenu(false)}
                       >
                         <svg
@@ -99,7 +99,7 @@ const Navbar = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-5 h-5 text-mainText me-2"
+                          className="me-2 h-5 w-5 text-mainText"
                         >
                           <path
                             strokeLinecap="round"
@@ -113,7 +113,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/login"
-                        className="text-mainText p-2 m-1 flex items-center rounded-lg cursor-pointer md:hover:bg-gray-200 dark:md:hover:bg-gray-500/50"
+                        className="m-1 flex cursor-pointer items-center rounded-lg p-2 text-mainText md:hover:bg-gray-200 dark:md:hover:bg-gray-500/50"
                         onClick={handleSignOut}
                       >
                         <svg
@@ -122,7 +122,7 @@ const Navbar = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-5 h-5 text-mainText me-2"
+                          className="me-2 h-5 w-5 text-mainText"
                         >
                           <path
                             strokeLinecap="round"

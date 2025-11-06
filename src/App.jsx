@@ -26,8 +26,8 @@ const router = createBrowserRouter(
       <Route path="signup" element={<SignUp />} />
       <Route path="add" element={<AddPostPage />} />
       <Route path="email-verification" element={<EmailVerification />} />
-    </Route>
-  )
+    </Route>,
+  ),
 );
 
 function App() {

@@ -23,7 +23,7 @@ const EmailVerification = () => {
     <div className="h-[calc(100vh-72px)] bg-secBackground transition-all duration-200 dark:text-mainText">
       <div className="container flex justify-center">
         <div className="mt-[60px] text-center leading-8 tracking-wide">
-          <div className="flex justify-center w-full mb-5">
+          <div className="mb-5 flex w-full justify-center">
             <img
               loading="lazy"
               src={MailSent}
@@ -31,7 +31,7 @@ const EmailVerification = () => {
               className="w-40 md:w-56"
             />
           </div>
-          <h1 className="text-xl md:text-2xl font-bold mb-2">
+          <h1 className="mb-2 text-xl font-bold md:text-2xl">
             Verify Your Email
           </h1>
           <p>
@@ -46,7 +46,7 @@ const EmailVerification = () => {
           <div>
             <button
               onClick={handleSignOut}
-              className="px-4 py-1 mt-3 border-[3px] border-primary text-white bg-primary rounded-full font-semibold"
+              className="mt-3 rounded-full border-[3px] border-primary bg-primary px-4 py-1 font-semibold text-white"
             >
               Back to Log In
             </button>

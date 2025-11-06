@@ -4,7 +4,7 @@ import { useAuthContext } from "../contexts/AuthProvider";
 import { useListContext } from "../contexts/ListProvider";
 
 const UnAuthHome = lazy(() =>
-  wait().then(() => import("../components/UnAuthHome"))
+  wait().then(() => import("../components/UnAuthHome")),
 );
 
 const AuthHome = lazy(() => import("../components/AuthHome"));
@@ -28,8 +28,8 @@ const HomePage = () => {
     <div
       className={
         !user
-          ? "min-h-[calc(100vh-72px)] transition-all duration-300 dark:text-mainText relative bg-homeLight dark:bg-homeDark bg-no-repeat bg-cover"
-          : "min-h-[calc(100vh-72px)] bg-secBackground transition-all duration-300 dark:text-mainText relative"
+          ? "relative min-h-[calc(100vh-72px)] bg-homeLight bg-cover bg-no-repeat transition-all duration-300 dark:bg-homeDark dark:text-mainText"
+          : "relative min-h-[calc(100vh-72px)] bg-secBackground transition-all duration-300 dark:text-mainText"
       }
     >
       <div className="container flex justify-center">

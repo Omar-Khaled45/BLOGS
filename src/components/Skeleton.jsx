@@ -1,12 +1,12 @@
 const Skeleton = () => {
   return (
-    <div className="p-5 bg-form mb-7 rounded-xl shadow-md dark:shadow-dark w-[350px] md:w-[600px]">
-      <div className="h-8 bg-gray-300 dark:bg-gray-800 rounded-full animate-pulse mb-5"></div>
+    <div className="mb-7 w-[350px] rounded-xl bg-form p-5 shadow-md md:w-[600px] dark:shadow-dark">
+      <div className="mb-5 h-8 animate-pulse rounded-full bg-gray-300 dark:bg-gray-800"></div>
       <div className="grid grid-cols-3 gap-4">
-        <div className="h-4 bg-gray-300 dark:bg-gray-800 rounded-full animate-pulse mb-3 col-span-2"></div>
-        <div className="h-4 bg-gray-300 dark:bg-gray-800 rounded-full animate-pulse mb-3"></div>
+        <div className="col-span-2 mb-3 h-4 animate-pulse rounded-full bg-gray-300 dark:bg-gray-800"></div>
+        <div className="mb-3 h-4 animate-pulse rounded-full bg-gray-300 dark:bg-gray-800"></div>
       </div>
-      <div className="h-4 bg-gray-300 dark:bg-gray-800 rounded-full animate-pulse mb-3"></div>
+      <div className="mb-3 h-4 animate-pulse rounded-full bg-gray-300 dark:bg-gray-800"></div>
     </div>
   );
 };

@@ -31,7 +31,7 @@ const DarkModeToggle = () => {
 
   return (
     <>
-      <h4 className="font-bold mb-3 text-lg dark:text-gray-400">Dark Mode</h4>
+      <h4 className="mb-3 text-lg font-bold dark:text-gray-400">Dark Mode</h4>
       <div>
         <label htmlFor="toggle">
           <input
@@ -42,13 +42,13 @@ const DarkModeToggle = () => {
             onChange={handleTheme}
           />
           <div
-            className={`w-20 h-8 rounded-full cursor-pointer relative ${
+            className={`relative h-8 w-20 cursor-pointer rounded-full ${
               checked ? "bg-primary" : "bg-gray-500"
             }`}
           >
             <div
-              className={`w-6 h-6 rounded-full absolute top-1/2 -translate-y-1/2 bg-white dark:bg-[#2d2f30] transition-all duration-300 ${
-                checked ? "left-[53px]" : "left-1"
+              className={`absolute left-0 top-1/2 h-6 w-6 -translate-y-1/2 rounded-full bg-white transition-all duration-300 dark:bg-[#2d2f30] ${
+                checked ? "translate-x-[53px]" : "translate-x-1"
               }`}
             ></div>
           </div>

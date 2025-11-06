@@ -39,21 +39,21 @@ const ResetPassword = () => {
   }
 
   return (
-    <div className="h-[calc(100vh-72px)] bg-secBackground flex items-start md:items-center transition-all duration-300 dark:text-mainText">
+    <div className="flex h-[calc(100vh-72px)] items-start bg-secBackground transition-all duration-300 md:items-center dark:text-mainText">
       <div className="container flex justify-center">
-        <div className="w-[500px] mt-[100px] md:mt-0 bg-form rounded-lg shadow-lg dark:shadow-dark px-7 py-5">
-          <h1 className="text-center text-2xl md:text-4xl font-bold mb-5 md:mb-10 relative after:content=[''] after:w-[50px] after:h-[5px] after:bg-primary after:absolute after:bottom-[-15px] md:after:bottom-[-20px] after:left-1/2 after:-translate-x-1/2">
+        <div className="mt-[100px] w-[500px] rounded-lg bg-form px-7 py-5 shadow-lg md:mt-0 dark:shadow-dark">
+          <h1 className="after:content=[''] relative mb-5 text-center text-2xl font-bold after:absolute after:bottom-[-15px] after:left-1/2 after:h-[5px] after:w-[50px] after:-translate-x-1/2 after:bg-primary md:mb-10 md:text-4xl md:after:bottom-[-20px]">
             Password Reset
           </h1>
-          <h2 className="text-center mt-8 mb-3 font-semibold text-black/50 dark:text-white/50">
+          <h2 className="mb-3 mt-8 text-center font-semibold text-black/50 dark:text-white/50">
             Enter your email to receive a password reset link
           </h2>
           <form className="w-full" onSubmit={handleSubmit}>
-            <div className="flex flex-col justify-center mb-3">
+            <div className="mb-3 flex flex-col justify-center">
               <input
                 type="email"
                 name="email"
-                className="p-4 rounded-md bg-secBackground caret-primary focus:outline-none"
+                className="rounded-md bg-secBackground p-4 caret-primary focus:outline-none"
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -62,7 +62,7 @@ const ResetPassword = () => {
             <div className="mb-5 flex justify-center">
               <button
                 type="submit"
-                className="px-5 py-2 rounded-full bg-primary text-white font-semibold"
+                className="rounded-full bg-primary px-5 py-2 font-semibold text-white"
               >
                 Reset Password
               </button>

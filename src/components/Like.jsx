@@ -39,7 +39,7 @@ const Like = ({ blog }) => {
   return (
     <>
       <div className="mt-3 flex items-center" ref={likeRef}>
-        <button className="cursor-pointer flex items-center">
+        <button className="flex cursor-pointer items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -50,7 +50,7 @@ const Like = ({ blog }) => {
                 ? "var(--primary-color)"
                 : "currentColor"
             }`}
-            className={`w-5 h-5 me-1 ${
+            className={`me-1 h-5 w-5 ${
               blog?.likes?.some((like) => like.userId === user.uid) &&
               "fill-primary"
             } `}
@@ -72,16 +72,16 @@ const Like = ({ blog }) => {
         </button>
       </div>
       {show && (
-        <div className="bg-black/40 fixed inset-0 z-30 flex items-center justify-center">
+        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/40">
           {blog.likes.length > 0 && (
             <div
-              className="bg-form rounded-lg"
+              className="rounded-lg bg-form"
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-center font-bold p-3 relative after:content=[''] after:w-[50px] after:h-[2px] after:bg-primary after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2">
+              <h3 className="after:content=[''] relative p-3 text-center font-bold after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-[50px] after:-translate-x-1/2 after:bg-primary">
                 Likes
               </h3>
-              <ul className="w-[350px] md:w-[400px] max-h-[400px] overflow-auto z-40">
+              <ul className="z-40 max-h-[400px] w-[350px] overflow-auto md:w-[400px]">
                 {blog.likes.map((like, index) => {
                   return (
                     <li
